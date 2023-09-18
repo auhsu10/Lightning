@@ -1,7 +1,7 @@
-int startX=0;
 int startY=150;
-int endX=0;
+int midY=150;
 int endY=150;
+int runbolt=0;
 
 void setup()
 {
@@ -13,21 +13,33 @@ void setup()
 
 void draw()
 {
-  fill((float)Math.random()*255,(float)Math.random()*255,(float)Math.random()*255);
-  while(endX<500){
-    endX=startX+(int)(Math.random()*9);
-    startX=endX;
-    startY=endY;
-  }
-  line(startX,startY,endX,endY);
-  beginShape();
-  vertex(0,0);
-  vertex(250,250);
-  vertex(150,240);
-  endShape(CLOSE);
+  fill(70,140,240,8);
+  rect(0,0,500,500);
+  stroke(0);
+  strokeWeight(1);
+  fill(100);
+  rect(0,50,20,400);
+  rect(480,50,20,400);
 }
 
 void mousePressed()
 {
+  startY=(int)((Math.random()*400)+50);
+  midY=(int)((Math.random()*400)+50);
+  endY=(int)((Math.random()*400)+50);
+  stroke((float)Math.random()*255,(float)Math.random()*255,(float)Math.random()*255);
+  strokeWeight(4);
+  line(0,startY,250,midY);
+  line(250,midY,500,endY);
+}
 
+void keyPressed()
+{
+  startY=(int)((Math.random()*400)+50);
+  midY=(int)((Math.random()*400)+50);
+  endY=(int)((Math.random()*400)+50);
+  stroke((float)Math.random()*255,(float)Math.random()*255,(float)Math.random()*255);
+  strokeWeight(4);
+  line(0,startY,250,midY);
+  line(250,midY,500,endY);
 }
