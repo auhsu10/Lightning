@@ -3,6 +3,7 @@ int midY1=150;
 int midY2=150;
 int midY3=150;
 int endY=150;
+int strikeCounter=0;
 
 void setup()
 {
@@ -14,7 +15,20 @@ void setup()
 
 void draw()
 {
+  noStroke();
+  fill(0,80,185);
+  rect(0,0,500,40);
+  fill(0,145,10);
+  rect(0,470,500,30);
+  fill(0);
+  rect(8,450,4,20);
+  rect(488,450,4,20);
   frameRate(15);
+  fill(0);
+  textAlign(CENTER);
+  textSize(20);
+  text("Lightning Strikes: "+strikeCounter,250,25);
+  text("Lightning Strikes: "+strikeCounter,250,25);
   fill(0,80,185,40);
   rect(0,0,500,500);
   stroke(0);
@@ -26,6 +40,7 @@ void draw()
 
 void mousePressed()
 {
+  strikeCounter++;
   float colorR=(float)Math.random()*255;
   float colorG=(float)Math.random()*255;
   float colorB=(float)Math.random()*255;
@@ -49,6 +64,7 @@ void mousePressed()
 
 void keyPressed()
 {
+  strikeCounter++;
   float colorR=(float)Math.random()*255;
   float colorG=(float)Math.random()*255;
   float colorB=(float)Math.random()*255;
